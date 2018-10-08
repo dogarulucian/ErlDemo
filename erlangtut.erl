@@ -38,10 +38,23 @@ display_employee() ->
     io:fwrite(" ~p~n",[T#employee.name]).   
  
 start_proc()->
-    Pid1=spawn(fun() -> server("Hello") end),
-    Pid2=spawn(fun()->server("Bye") end), 
+    %Pid1=spawn(fun() -> server("Hello") end),
+    %Pid2=spawn(fun()->server("Bye") end), 
+    L1 = [1,2,3,4],
+    L2 = [5,6],
+    R = L1 ++ L2,
     %Pid1!{self(),hello},
-    Pid1!Pid2!
+    M=#{type=>person, age=>28},
+    %If the key of the map is a string you use maps:get("keyname",Map)
+    io:fwrite("~p~n",[maps:get(type,M)]),
+    io:fwrite("~p~n", [R]), 
+    %atoms
+    atom,
+    A = 'atom2',
+    io:fwrite("~p~n",[A]).
+    %atom = 'atom',
+    %io:fwrite(" ~p~n", [atom]).
+    %Pid1!Pid2!
     %Pid2!{self(),bye}
 
 server(Message) ->
