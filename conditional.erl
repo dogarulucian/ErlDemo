@@ -1,6 +1,6 @@
 -module(conditional).
 -export([test/1]).
--export([insert/2,beach/1, append/2]).
+-export([insert/2,beach/1, append/2,recursive_sum/1]).
 
 insert(X,[]) ->
     [X];
@@ -20,8 +20,8 @@ append([], Tail) ->
 
 test(V)
    when
-     %when  , used in pm is && 
-     %when ; used in pm is ||  
+     %when  , used in pattern match  is && 
+     %when ; used in pattern match  is ||  
      V >= 16 ;
      V=< 90 -> true;
 test(_)->
@@ -41,4 +41,7 @@ _ ->
 		'avoid beach'
 end.
 
-  
+
+
+recursive_sum([H|T]) -> H+recursive_sum(T);
+recursive_sum([])    -> 0.  
