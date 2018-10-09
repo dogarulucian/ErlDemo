@@ -1,6 +1,6 @@
 -module(conditional).
 -export([test/1]).
--export([insert/2,beach/1]).
+-export([insert/2,beach/1, append/2]).
 
 insert(X,[]) ->
     [X];
@@ -9,6 +9,13 @@ insert(X,Set) ->
         true  -> Set;
         false -> [X|Set]
     end.
+
+
+append([H|T], Tail) ->
+    [H|append(T, Tail)];
+append([], Tail) ->
+    Tail.
+
 
 
 test(V)
