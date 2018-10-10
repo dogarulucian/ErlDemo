@@ -1,6 +1,6 @@
 -module(conditional).
--export([test/1]).
--export([insert/2,beach/1, append/2,recursive_sum/1]).
+-export([test/1,test2/1]).
+-export([insert/2,beach/1, append/2,recursive_sum/1, beachf/1]).
 
 insert(X,[]) ->
     [X];
@@ -42,6 +42,22 @@ _ ->
 end.
 
 
+beachf({celsius,N})when 
+       N>=20 andalso  N=<45 -> 'favorable';
+beachf({kelvin,N}) when 
+       N>= 293 andalso N=<318-> 'scientifically favorable';
+beachf(_)->'avoid brach'.
+
 
 recursive_sum([H|T]) -> H+recursive_sum(T);
 recursive_sum([])    -> 0.  
+
+
+test2({celsius,N})when
+     N>=20 orelse N=<45 ->'favorable';
+test2({kelvin,N}) when
+     N>=293 orelse N=<318->'Kelvin';
+test2(_)->'something else'.
+  
+
+
