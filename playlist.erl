@@ -18,5 +18,5 @@ start()->
    [H|T]=L2,
    io:fwrite("~p Head of the list~n",[H]),
    io:fwrite("~p Tail of the list~n", [T]),
-   [A,B|C]=[1,2,3,4,5,6,7],
+   %[A,B|C]=[1,2,3,4,5,6,7],
    io:fwrite("~p~n",[C]).
