@@ -1,5 +1,5 @@
 -module(conditional).
--export([test/1,test2/1]).
+-export([test/1,test2/1,temp/1,guess/1]).
 -export([insert/2,beach/1, append/2,recursive_sum/1, beachf/1]).
 
 insert(X,[]) ->
@@ -60,4 +60,17 @@ test2({kelvin,N}) when
 test2(_)->'something else'.
   
 
+temp(Temp)->
+case Temp of
+    celsius -> 'EU';
+    kelvin ->'US'
 
+end.
+
+
+
+guess(Nr) when 
+    Nr =:= 3 ->'win';
+guess(Nr) when
+    Nr =<3 -> 'you loose';
+guess(_)->"Try again".   
