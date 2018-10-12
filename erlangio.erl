@@ -1,5 +1,5 @@
 -module(erlangio).
--export([write_to_file/0,read_from_file/0, read_from_file2/0, get_sys_var/0]).
+-export([get_time/0,write_to_file/0,read_from_file/0, read_from_file2/0, get_sys_var/0]).
 
 write_to_file()->
    Content = "Some content\n",   
@@ -19,4 +19,8 @@ read_from_file2()->
 
 get_sys_var()->
    os:getenv("PATH").
+
+get_time()->
+   Current = calendar:local_time(). 
+
 
