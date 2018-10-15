@@ -21,6 +21,11 @@ get_sys_var()->
    os:getenv("PATH").
 
 get_time()->
-   Current = calendar:local_time(). 
+  Current = calendar:local_time(),
+  io:fwrite("~p~n",[Current]),
+  {{Year,Month,Day},{Hour,Minute,Sconds}} = Current,
+  io:fwrite("~p~p~p~n",[Day,Month,Year]).
+  
+  
 
 
