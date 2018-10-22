@@ -1,0 +1,1 @@
+-record(employee, {name = "", id}).
