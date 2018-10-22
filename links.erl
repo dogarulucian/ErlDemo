@@ -1,6 +1,6 @@
 -module(links).
 -compile([export_all]).
-
+%%http://erlangbyexample.org/links
 
 child() ->
     io:format("I (child) have pid: ~p~n", [self()]),
