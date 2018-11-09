@@ -1,6 +1,7 @@
 -module(erlangio).
--export([get_time/0,write_to_file/0,read_from_file/0, read_from_file2/0, get_sys_var/0]).
 
+%-export([get_time/0,write_to_file/0,read_from_file/0, read_from_file2/0, get_sys_var/0]).
+-compile(export_all).
 write_to_file()->
    Content = "Some content\n",   
    {ok,File}=file:open("test.txt",[write]),
